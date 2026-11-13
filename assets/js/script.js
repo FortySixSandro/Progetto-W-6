@@ -110,3 +110,47 @@ FILTRI.addEventListener('click', function (event) {
 });
 
 mostraLavori(LAVORI);
+
+const FORM = document.getElementById('form-contatti');
+const CAMPO_NOME = document.getElementById('nome');
+const CAMPO_EMAIL = document.getElementById('email');
+const CAMPO_MESSAGGIO = document.getElementById('messaggio');
+const ALERT_CONFERMA = document.getElementById('alert-conferma');
+
+FORM.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    ALERT_CONFERMA.classList.add('d-none');
+
+    let formValido = true;
+
+    const NOME = CAMPO_NOME.value.trim();
+    if (NOME === '') {
+        CAMPO_NOME.classList.add('is-invalid');
+        formValido = false;
+    } else {
+        CAMPO_NOME.classList.remove('is-invalid');
+    }
+
+    const EMAIL = CAMPO_EMAIL.value.trim();
+    if (EMAIL.includes('@') && EMAIL.includes('.')) {
+        CAMPO_EMAIL.classList.remove('is-invalid');
+    } else {
+        CAMPO_EMAIL.classList.add('is-invalid');
+        formValido = false;
+    }
+
+    const MESSAGGIO = CAMPO_MESSAGGIO.value.trim();
+    if (MESSAGGIO.length < 10) {
+        CAMPO_MESSAGGIO.classList.add('is-invalid');
+        formValido = false;
+    } else {
+        CAMPO_MESSAGGIO.classList.remove('is-invalid');
+    }
+
+    if (formValido) {
+        ALERT_CONFERMA.textContent = 'Grazie ' + NOME + ', ti rispondiamo entro 48 ore.';
+        ALERT_CONFERMA.classList.remove('d-none');
+        FORM.reset();
+    }
+});

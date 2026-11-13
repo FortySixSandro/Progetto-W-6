@@ -127,14 +127,17 @@
                 <p class="text-center mb-4">Compila il form, ti rispondiamo entro 48 ore.</p>
                 <div class="row">
                     <div class="col-12 col-md-8 col-lg-6 mx-auto">
-                        <form>
+                        <div id="alert-conferma" class="alert alert-success d-none" role="alert"></div>
+                        <form id="form-contatti" novalidate>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="nome">
+                                <div class="invalid-feedback">Inserisci il tuo nome.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email">
+                                <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="form-label">Tipo di progetto</label>
@@ -146,7 +149,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="messaggio" class="form-label">Messaggio</label>
-                                <textarea class="form-control" id="messaggio" rows="5" required></textarea>
+                                <textarea class="form-control" id="messaggio" rows="5"></textarea>
+                                <div class="invalid-feedback">Il messaggio deve avere almeno 10 caratteri.</div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Invia</button>
                         </form>
