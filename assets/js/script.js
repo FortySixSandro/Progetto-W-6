@@ -26,6 +26,19 @@ const LAVORI = [
 const FILTRI = document.getElementById('filtri');
 const GRIGLIA_LAVORI = document.getElementById('griglia-lavori');
 
+const MODALE_TITOLO = document.getElementById('modale-titolo');
+const MODALE_IMMAGINE = document.getElementById('modale-immagine');
+const MODALE_ANNO = document.getElementById('modale-anno');
+const MODALE_CATEGORIA = document.getElementById('modale-categoria');
+
+function riempiModale(lavoro) {
+    MODALE_TITOLO.textContent = lavoro.titolo;
+    MODALE_IMMAGINE.src = lavoro.immagine;
+    MODALE_IMMAGINE.alt = lavoro.titolo;
+    MODALE_ANNO.textContent = lavoro.anno;
+    MODALE_CATEGORIA.textContent = lavoro.categoria;
+}
+
 function mostraLavori(lista) {
     GRIGLIA_LAVORI.textContent = '';
 
@@ -35,6 +48,12 @@ function mostraLavori(lista) {
 
         const CARD = document.createElement('div');
         CARD.className = 'card card-elevata card-lavoro h-100';
+        CARD.setAttribute('data-bs-toggle', 'modal');
+        CARD.setAttribute('data-bs-target', '#modale-lavoro');
+
+        CARD.addEventListener('click', function () {
+            riempiModale(lavoro);
+        });
 
         const IMMAGINE = document.createElement('img');
         IMMAGINE.src = lavoro.immagine;
@@ -52,13 +71,13 @@ function mostraLavori(lista) {
         ANNO.className = 'mb-2';
         ANNO.textContent = lavoro.anno;
 
-        const CATEGORIA = document.createElement('span');
-        CATEGORIA.className = 'badge badge-categoria';
-        CATEGORIA.textContent = lavoro.categoria;
+        const ETICHETTA = document.createElement('span');
+        ETICHETTA.className = 'badge badge-categoria';
+        ETICHETTA.textContent = lavoro.categoria;
 
         CORPO.appendChild(TITOLO);
         CORPO.appendChild(ANNO);
-        CORPO.appendChild(CATEGORIA);
+        CORPO.appendChild(ETICHETTA);
         CARD.appendChild(IMMAGINE);
         CARD.appendChild(CORPO);
         COLONNA.appendChild(CARD);

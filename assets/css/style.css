@@ -15,10 +15,10 @@
 [data-bs-theme="dark"] {
     --brand-primary: hsl(20, 30%, 45%);
     --brand-primary-hover: hsl(20, 30%, 37%);
+    --ombra-card-hover: 0 10px 24px rgba(255, 255, 255, 0.2);
     --bg-pagina: hsl(20, 20%, 9%);
     --bg-sezione-chiara: hsl(20, 20%, 12%);
     --bg-card: hsl(20, 20%, 17%);
-    --ombra-card-hover-d: 0 10px 24px rgba(255, 255, 255, 0.2);
     --testo: hsl(40, 30%, 90%);
 }
 
@@ -61,17 +61,6 @@ section {
     z-index: 1030;
 }
 
-.btn-tema {
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: var(--radius-base);
-}
-
-.btn-tema:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-}
-
 .hero {
     min-height: 80vh;
     padding: 3rem 0;
@@ -100,13 +89,9 @@ section {
     box-shadow: var(--ombra-card-hover);
 }
 
-[data-bs-theme="dark"] .card-elevata:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--ombra-card-hover-d);
-}
-
 .card-lavoro {
     overflow: hidden;
+    cursor: pointer;
 }
 
 .btn-filtro {
