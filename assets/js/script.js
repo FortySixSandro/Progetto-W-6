@@ -15,20 +15,20 @@ THEME_TOGGLE.addEventListener('click', function () {
 });
 
 const LAVORI = [
-    { titolo: 'Villa sul lago', anno: 2024, categoria: 'Residenziale', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Villa+sul+lago' },
-    { titolo: 'Appartamento Navigli', anno: 2023, categoria: 'Interior design', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Appartamento+Navigli' },
-    { titolo: 'Casa colonica', anno: 2022, categoria: 'Ristrutturazioni', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Casa+colonica' },
-    { titolo: 'Loft industriale', anno: 2024, categoria: 'Interior design', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Loft+industriale' },
-    { titolo: 'Casa a schiera', anno: 2023, categoria: 'Residenziale', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Casa+a+schiera' },
-    { titolo: 'Ex fabbrica', anno: 2022, categoria: 'Ristrutturazioni', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Ex+fabbrica' }
+    { titolo: 'Villa sul lago', anno: 2024, categoria: 'Residenziale', descrizione: 'Abbiamo ripensato la zona giorno per renderla più luminosa e accogliente. Le finestre sono state valorizzate per aprire la vista sul lago. La cucina è stata collegata al soggiorno con una disposizione più fluida. Per gli interni abbiamo scelto materiali naturali e colori caldi. Il progetto crea un ambiente rilassante, in dialogo con il paesaggio.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Villa+sul+lago' },
+    { titolo: 'Appartamento Navigli', anno: 2023, categoria: 'Interior design', descrizione: 'Abbiamo riorganizzato gli ambienti per sfruttare meglio ogni metro quadrato. La zona giorno è stata resa più aperta e conviviale. Abbiamo progettato arredi su misura per aumentare lo spazio contenitivo. Luci e tonalità calde contribuiscono a creare un’atmosfera accogliente. Il risultato è una casa funzionale, pensata per la vita quotidiana.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Appartamento+Navigli' },
+    { titolo: 'Casa colonica', anno: 2022, categoria: 'Ristrutturazioni', descrizione: 'Abbiamo recuperato gli elementi originali che raccontano la storia della casa. Le finiture più deteriorate sono state restaurate con attenzione. Gli impianti sono stati aggiornati per migliorare comfort e funzionalità. Materiali come il cotto e il legno mantengono il carattere rustico degli ambienti. La casa conserva la sua identità e si adatta alle esigenze di oggi.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Casa+colonica' },
+    { titolo: 'Loft industriale', anno: 2024, categoria: 'Interior design', descrizione: 'Abbiamo organizzato il loft distinguendo le diverse aree senza chiudere gli spazi. La zona cucina e il soggiorno condividono un ambiente ampio e luminoso. Gli arredi su misura aiutano a mantenere ordine e continuità. Metallo, legno e superfici materiche richiamano l\'origine industriale dell\'edificio. L\'illuminazione completa il progetto con punti luce funzionali e d\'atmosfera.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Loft+industriale' },
+    { titolo: 'Casa a schiera', anno: 2023, categoria: 'Residenziale', descrizione: 'Abbiamo ridisegnato la distribuzione interna per rendere la casa più pratica. La zona giorno è stata resa più luminosa e collegata al giardino. La scala è diventata un elemento centrale, valorizzato da nuove finiture. Armadi e contenitori su misura sfruttano gli spazi spesso trascurati. Ogni livello risponde così a una funzione precisa, mantenendo uno stile coerente.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Casa+a+schiera' },
+    { titolo: 'Ex fabbrica', anno: 2022, categoria: 'Ristrutturazioni', descrizione: 'Abbiamo trasformato l\'ex fabbrica in uno spazio di lavoro condiviso. Le murature e alcuni dettagli originali sono stati recuperati e lasciati a vista. Le aree comuni sono state affiancate da sale riunioni più riservate. Pannelli fonoassorbenti e un nuovo progetto illuminotecnico migliorano il comfort. Il recupero unisce il carattere industriale dell\'edificio a funzioni contemporanee.', immagine: 'https://placehold.co/600x400/7a5540/ffffff?text=Ex+fabbrica' }
 ];
 
 const FILTRI = document.getElementById('filtri');
 const GRIGLIA_LAVORI = document.getElementById('griglia-lavori');
-
 const MODALE_TITOLO = document.getElementById('modale-titolo');
 const MODALE_IMMAGINE = document.getElementById('modale-immagine');
 const MODALE_ANNO = document.getElementById('modale-anno');
+const MODALE_DESCRIZIONE = document.getElementById('modale-descrizione');
 const MODALE_CATEGORIA = document.getElementById('modale-categoria');
 
 function riempiModale(lavoro) {
@@ -37,6 +37,7 @@ function riempiModale(lavoro) {
     MODALE_IMMAGINE.alt = lavoro.titolo;
     MODALE_ANNO.textContent = lavoro.anno;
     MODALE_CATEGORIA.textContent = lavoro.categoria;
+    MODALE_DESCRIZIONE.textContent = lavoro.descrizione;
 }
 
 function mostraLavori(lista) {
