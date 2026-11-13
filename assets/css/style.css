@@ -1,0 +1,163 @@
+:root {
+    --brand-primary: #7a5540;
+    --brand-secondary: #2d2420;
+    --radius-base: 8px;
+    --bg-pagina: #ffffff;
+    --bg-sezione-chiara: #f6f7f9;
+    --bg-card: #ffffff;
+    --testo: #212529;
+}
+
+[data-bs-theme="dark"] {
+    --brand-primary: #a67553;
+    --bg-pagina: #1b1714;
+    --bg-sezione-chiara: #241e1a;
+    --bg-card: #2d2520;
+    --testo: #f1ece8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-pagina);
+    color: var(--testo);
+}
+
+section {
+    scroll-margin-top: 60px;
+}
+
+.bg-primary {
+    background-color: var(--brand-primary) !important;
+}
+
+.text-primary {
+    color: var(--brand-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    border-radius: var(--radius-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-secondary);
+    border-color: var(--brand-secondary);
+}
+
+.navbar-atelier {
+    background-color: var(--brand-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.btn-tema {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-base);
+}
+
+.btn-tema:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.hero {
+    min-height: 80vh;
+    padding: 3rem 0;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card-elevata {
+    background-color: var(--bg-card);
+    border: none;
+    border-radius: var(--radius-base);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-elevata:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.icona-servizio {
+    font-size: 2.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+}
+
+.sezione-chiara {
+    background-color: var(--bg-sezione-chiara);
+}
+
+.form-control,
+.form-select {
+    border-radius: var(--radius-base);
+}
+
+.footer-atelier {
+    background-color: var(--brand-secondary);
+    color: #f1ece8;
+}
+
+.footer-atelier a {
+    color: #cbbfb7;
+    text-decoration: none;
+}
+
+.footer-atelier a:hover {
+    color: #ffffff;
+}
+
+.footer-atelier hr {
+    border-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
+
+@media (min-width: 576px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .icona-servizio {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero h1 {
+        font-size: 3.4rem;
+    }
+
+    .hero {
+        padding: 5rem 0;
+    }
+}
