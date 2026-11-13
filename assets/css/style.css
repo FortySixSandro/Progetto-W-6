@@ -1,19 +1,24 @@
 :root {
-    --brand-primary: #7a5540;
-    --brand-secondary: #2d2420;
+    --brand-primary: hsl(20, 30%, 35%);
+    --brand-primary-hover: hsl(20, 30%, 27%);
+    --brand-secondary: hsl(20, 20%, 15%);
+    --footer-link-hover: hsl(40, 30%, 90%);
     --radius-base: 8px;
+    --ombra-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --ombra-card-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
     --bg-pagina: #ffffff;
     --bg-sezione-chiara: #f6f7f9;
     --bg-card: #ffffff;
-    --testo: #212529;
+    --testo: hsl(20, 30%, 35%);
 }
 
 [data-bs-theme="dark"] {
-    --brand-primary: #a67553;
-    --bg-pagina: #1b1714;
-    --bg-sezione-chiara: #241e1a;
-    --bg-card: #2d2520;
-    --testo: #f1ece8;
+    --brand-primary: hsl(20, 30%, 45%);
+    --brand-primary-hover: hsl(20, 30%, 37%);
+    --bg-pagina: hsl(20, 20%, 9%);
+    --bg-sezione-chiara: hsl(20, 20%, 12%);
+    --bg-card: hsl(20, 20%, 17%);
+    --testo: hsl(40, 30%, 90%);
 }
 
 html {
@@ -44,8 +49,8 @@ section {
 }
 
 .btn-primary:hover {
-    background-color: var(--brand-secondary);
-    border-color: var(--brand-secondary);
+    background-color: var(--brand-primary-hover);
+    border-color: var(--brand-primary-hover);
 }
 
 .navbar-atelier {
@@ -85,13 +90,13 @@ section {
     background-color: var(--bg-card);
     border: none;
     border-radius: var(--radius-base);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--ombra-card);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card-elevata:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--ombra-card-hover);
 }
 
 .icona-servizio {
@@ -120,7 +125,7 @@ section {
 }
 
 .footer-atelier a:hover {
-    color: #ffffff;
+    color: var(--footer-link-hover);
 }
 
 .footer-atelier hr {
