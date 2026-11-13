@@ -36,5 +36,5 @@ Il modulo è solo una parte visiva della pagina: al momento non invia davvero i 
 
 ## Personalizzare i progetti
 
-I progetti mostrati nella sezione **Lavori** sono definiti all'inizio di `assets/js/script.js`, nell'elenco `LAVORI`. Da lì puoi cambiare titolo, anno, categoria e immagine. I pulsanti della pagina filtrano automaticamente i progetti in base alla categoria.
+I progetti mostrati nella sezione **Lavori** sono definiti all'interno di `assets/js/script.js`, nell'array di oggetti `LAVORI`. Da lì puoi cambiare titolo, anno, categoria e immagine. I pulsanti della pagina filtrano automaticamente i progetti in base alla categoria.
 
