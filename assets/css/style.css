@@ -18,6 +18,7 @@
     --bg-pagina: hsl(20, 20%, 9%);
     --bg-sezione-chiara: hsl(20, 20%, 12%);
     --bg-card: hsl(20, 20%, 17%);
+    --ombra-card-hover-d: 0 10px 24px rgba(255, 255, 255, 0.2);
     --testo: hsl(40, 30%, 90%);
 }
 
@@ -97,6 +98,34 @@ section {
 .card-elevata:hover {
     transform: translateY(-6px);
     box-shadow: var(--ombra-card-hover);
+}
+
+[data-bs-theme="dark"] .card-elevata:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ombra-card-hover-d);
+}
+
+.card-lavoro {
+    overflow: hidden;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    color: var(--brand-primary);
+    border: 1px solid var(--brand-primary);
+    border-radius: var(--radius-base);
+}
+
+.btn-filtro:hover,
+.btn-filtro.active {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+}
+
+.badge-categoria {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    border-radius: var(--radius-base);
 }
 
 .icona-servizio {
